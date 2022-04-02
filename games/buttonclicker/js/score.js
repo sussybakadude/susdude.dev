@@ -7,10 +7,12 @@
       var score = +(scorea);
       }
       var b = document.getElementById("b")
-      b.innerHTML = "Score: " + score.toString()
+  stf = score.toFixed(1)
+  b.innerHTML = "Score: " + stf.toString()
       function addscore() {
       var b = document.getElementById("b")
         score += mult
-        b.innerHTML = "Score: " + score.toString()
+  stf = score.toFixed(1)
+  b.innerHTML = "Score: " + stf.toString()
         document.cookie = "score=" + score.toString();
       }
