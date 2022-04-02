@@ -1,0 +1,43 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+<style>
+  .h {
+    color: lightgreen;
+    background-color: grey;
+  }
+  .h:hover {
+    color: green;
+    background-color: lightgrey;    
+  }
+</style>
+	<title>The sussiest site</title>
+</head>
+   <body style="background-color: black">
+   <h1 style="color: lightgreen;">The Worlds biggest easily downloaded collection of bookmarklets</h1>
+   <p style="color: lightgreen;">Video on how to download:</p>
+<video width="500" height="240" controls>
+  <source src="https://susdudedev.henrygal1.repl.co/storage/howto.webm" type="video/webm">
+  <source src="https://susdudedev.henrygal1.repl.co/storage/howto.mp4" type="video/mp4">
+Whoops! We could not load this video, try clicking <a href="susdude.dev/storage/howto.mp4">this</a> link to watch
+</video>
+   <p style="color: lightgreen;">Download the Collection by clicking the button below</p>
+         <a href="https://susdudedev.henrygal1.repl.co/storage/suscollection.html" download="sus-collection" id="a">
+         <button class="h" type="button" id="d" onclick="download()">Download</button> 
+         </a> 
+<script>
+  var b = document.getElementById("d");
+  var a = document.getElementById("a"); 
+  function download() {
+    document.cookie = 'yourmom=hi';
+    b.innerHTML = "Redownload"
+  }
+</script>
+<script>
+if (document.cookie == "yourmom=hi") {
+  b.innerHTML = "Redownload"
+  a.download = "sus-collection-redownload"
+}
+</script>
+   </body> 
+</html> 
