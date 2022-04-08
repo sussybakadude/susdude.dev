@@ -1,0 +1,23 @@
+  <html lang="en">
+
+  <head>
+      <meta charset="utf-8">
+      <title>
+          Web Paint!
+      </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>body {
+    position:fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}</style>
+  </head>
+  <body>
+  <input id="hex" type="color" placeholder="enter hex color"></input> <input id="size" placeholder="enter size"></input><button onclick='localStorage.setItem("imgCanvas",canvas.toDataURL());'></button>
+  <canvas id="draw"></canvas>
+  <script src="touch.js"></script>
+  <script src="app.js"></script>
+  </body>
+  </html>

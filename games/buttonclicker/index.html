@@ -21,13 +21,39 @@ button {
     <p style="color: blue;">Multi: <span id="mc">0</span></p>
     <p style="color: blue;">Rebirth: <span id="rc">0</span></p>
     <p style="color: blue;">Clickers: <span id="cc">0</span></p>
-    <script src="js/achievments.js"></script> 
+    <script>      function cheat(type) {
+        if (type == "set") {
+        score = parseInt(prompt("Score"))
+        b.innerHTML = "Score: " + score.toString()
+        document.cookie = "score=" + score;
+        }
+        if (type == "add") {
+        score += parseInt(prompt("Score"))
+        b.innerHTML = "Score: " + score.toString()
+        document.cookie = "score=" + score;
+        }
+        if (type == "setm") {
+        mult = parseInt(prompt("Multiplier"))
+        mc.innerHTML = mult.toString()
+        document.cookie = "mult=" + mult;
+        }
+        if (type == "addm") {
+        mult += parseInt(prompt("Multiplier"))
+        mc.innerHTML = mult.toString()
+        document.cookie = "mult=" + mult;
+        }
+        if (type == "setr") {
+        r = parseInt(prompt("Rebirth"))
+        rc.innerHTML = r.toString()
+        document.cookie = "r=" + r;
+        }
+        if (type == "addr") {
+        r += parseInt(prompt("Rebirth"))
+        rc.innerHTML = r.toString()
+        document.cookie = "r=" + r;
+        }
+      }</script>
     <script src="js/stats.js"></script>
     <script src="js/score.js"></script>
-    <script src="js/cheat.js"></script>
-    <script src="js/autoclicker.js"></script>
-    <script>
-
-    </script>
   </body>
 </html>
