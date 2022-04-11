@@ -57,12 +57,11 @@ function addmulti() {
   }
 }
 function Rebirth() {
-  re = 200 * ((r - 0.1) * 1.3);
+  re = 3000 * ((r - 0.1) * 1.3);
   if (score >= re) {
   score = 0;
   r += 1;
-  car(r);
-  rc.innerHTML = r.toFixed(1);
+  rc.innerHTML = r;
   stf = score.toFixed(1);
   b.innerHTML = "Score: 0";
   mult = 1;
