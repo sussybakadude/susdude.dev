@@ -3,7 +3,6 @@ var allowedDomains = ['susdude.dev'];
 if (allowedDomains.indexOf(document.domain) == -1) {
   window.location.href = "https://susdude.dev/games/buttonclicker/redirect"
 }
-alert(document.domain)
 document.write('<!DOCTYPE html>');
 document.write('<html>');
 document.write('  <head>');
