@@ -22,4 +22,5 @@ function saveinput(id, value) {
 function savehref(id, value) {
   elm = document.getElementById(id)
   elm.href = value
+  alert("HI")
 }
