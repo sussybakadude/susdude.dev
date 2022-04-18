@@ -1,6 +1,5 @@
 function getinput(id) {
   elm = document.getElementById(id)
-  alert(elm.value)
   return elm.value
   
 }
