@@ -1,5 +1,4 @@
 function submit() {
-alert("HI")
 a = getinput("in")
 b = a.replace(" ", "+")
 c = encodeURIComponent(b)
