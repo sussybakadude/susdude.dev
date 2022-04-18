@@ -1,5 +1,7 @@
 function submit() {
+alert("HI")
 a = getinput("in")
+alert("BYE")
 b = a.replace(" ", "+")
 c = encodeURIComponent(b)
 d = c.replace("?x=", "")
