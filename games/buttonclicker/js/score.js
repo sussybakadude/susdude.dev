@@ -6,6 +6,5 @@
         score += mult;
   stf = score.toFixed(1);
   b.innerHTML = "Score/Money: " + stf.toString();
-      set(1, stf.toString)
         
       }

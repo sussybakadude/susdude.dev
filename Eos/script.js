@@ -1,4 +1,4 @@
-9iufunction submit() {
+function submit() {
 a = getinput("in")
 c = encodeURIComponent(b)
 sout = c.replace("?x=", "")

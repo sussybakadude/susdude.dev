@@ -12,24 +12,20 @@ function getCookie(cname) {
     }
   }
   if (cname == "score" || cname ==  "cl" || cname ==  "r") {
-    document.cookie = "data = 1:0:0:0"
     return 0;
   }
   else {
     return 1;    
   }
 }
-function setCharAt(str,index,chr) {
-    if(index > str.length-1) return str;
-    return str.substring(0,index) + chr + str.substring(index+1);
+data = getCookie("data").split(":")
+mult = +getCookie("mult") || data[0]
+score = +getCookie("score")  || data[1]
+r = +getCookie("r") || data[2]
+cl = +getCookie("cl") || data[3]
+window.onbeforeunload = {
+  document.cookie = "data=" + mult.toString().toFixed() + ":" + score.toString().toFixed() + ":" + r.toString().toFixed() + ":" + cl.toString().toFixed()
 }
-function set(data, value) {
-  document.cookie = setCharAt(getCookie("data"), 2 * data, value)
-}
-mult = +getCookie("mult") || +getCookie("data").split(":")[0]
-score = +getCookie("score") || +getCookie("data").split(":")[1]
-r = +getCookie("r")  || +getCookie("data").split(":")[2]
-cl = +getCookie("cl") || +getCookie("data").split(":")[3]
 mc = document.getElementById("mc");
 rc = document.getElementById("rc");
 cc = document.getElementById("cc");  
@@ -53,8 +49,6 @@ function addmulti() {
   mc.innerHTML = mult.toFixed(1);
   stf = score.toFixed(1);
   b.innerHTML = "Score: " + stf.toString();
-  set(1, stf)
-  set(0, mult)
     multip = 200 * ((mult - 0.1) * 1.2);
     multipl = multip.toFixed();
   mb.innerHTML = "Add 0.1 to multi (Cost " + multipl + ")";
@@ -77,9 +71,6 @@ function Rebirth() {
   multip = 200 * ((mult - 0.1) * 1.2);
   multipl = multip.toFixed();
   mb.innerHTML = "Add 0.1 to multi (Cost " + multipl + ")";
-  set(1, 0)
-  set(2, r)
-  set(0, 1)
   re = 3000 * ((r - 0.1) * 1.2);  
   reb = re.toFixed();
   rb.innerHTML = "Set Multi And score to 1, Add 1 rebirth (Cost " + reb + ")";
@@ -102,8 +93,6 @@ function saddcps() {
   cc.innerHTML = cl.toFixed(1);
   stf = score.toFixed(1);
   b.innerHTML = "Score: " + stf.toString();
-  document.cookie = "score=" + score;
-  document.cookie = "cl=" + cl;
   interval = 2000;
   setInterval(click, interval);
 }
