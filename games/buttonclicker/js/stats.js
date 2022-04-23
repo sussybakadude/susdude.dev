@@ -25,6 +25,7 @@ r = +getCookie("r") || data[2]
 cl = +getCookie("cl") || data[3]
 window.onbeforeunload = {
   document.cookie = "data=" + mult.toString().toFixed() + ":" + score.toString().toFixed() + ":" + r.toString().toFixed() + ":" + cl.toString().toFixed()
+  return "Your Data Has been saved";
 }
 mc = document.getElementById("mc");
 rc = document.getElementById("rc");
