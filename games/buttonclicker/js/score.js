@@ -6,6 +6,6 @@
         score += mult;
   stf = score.toFixed(1);
   b.innerHTML = "Score/Money: " + stf.toString();
-        document.cookie = "score=" + score.toString();
+      set(1, stf.toString)
         
       }

@@ -12,16 +12,24 @@ function getCookie(cname) {
     }
   }
   if (cname == "score" || cname ==  "cl" || cname ==  "r") {
+    document.cookie = "data = 1:0:0:0"
     return 0;
   }
   else {
     return 1;    
   }
 }
-mult = +getCookie("mult");
-score = +getCookie("score");
-r = +getCookie("r");
-cl = +getCookie("cl");
+function setCharAt(str,index,chr) {
+    if(index > str.length-1) return str;
+    return str.substring(0,index) + chr + str.substring(index+1);
+}
+function set(data, value) {
+  document.cookie = setCharAt(getCookie("data"), 2 * data, value)
+}
+mult = +getCookie("mult") || +getCookie("data").split(":")[0]
+score = +getCookie("score") || +getCookie("data").split(":")[1]
+r = +getCookie("r")  || +getCookie("data").split(":")[2]
+cl = +getCookie("cl") || +getCookie("data").split(":")[3]
 mc = document.getElementById("mc");
 rc = document.getElementById("rc");
 cc = document.getElementById("cc");  
@@ -45,8 +53,8 @@ function addmulti() {
   mc.innerHTML = mult.toFixed(1);
   stf = score.toFixed(1);
   b.innerHTML = "Score: " + stf.toString();
-  document.cookie = "score=" + score;
-  document.cookie = "mult=" + mult;
+  set(1, stf)
+  set(0, mult)
     multip = 200 * ((mult - 0.1) * 1.2);
     multipl = multip.toFixed();
   mb.innerHTML = "Add 0.1 to multi (Cost " + multipl + ")";
@@ -69,9 +77,9 @@ function Rebirth() {
   multip = 200 * ((mult - 0.1) * 1.2);
   multipl = multip.toFixed();
   mb.innerHTML = "Add 0.1 to multi (Cost " + multipl + ")";
-  document.cookie = "score=0";
-  document.cookie = "r=" + r;
-  document.cookie = "mult=1";
+  set(1, 0)
+  set(2, r)
+  set(0, 1)
   re = 3000 * ((r - 0.1) * 1.2);  
   reb = re.toFixed();
   rb.innerHTML = "Set Multi And score to 1, Add 1 rebirth (Cost " + reb + ")";
