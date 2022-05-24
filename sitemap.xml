@@ -8,9 +8,13 @@
 <loc>https://susdudedev.henrygal1.repl.co/games/buttonclicker</loc>
 <lastmod>2022-04-10T05:10:11+01:00</lastmod>
 <priority>0.6</priority>
-</url>
 <url>
 <loc>https://susdudedev.henrygal1.repl.co/ATB</loc>
+<lastmod>2022-04-10T05:10:11+01:00</lastmod>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://susdudedev.henrygal1.repl.co/HelloWorld</loc>
 <lastmod>2022-04-10T05:10:11+01:00</lastmod>
 <priority>0.6</priority>
 </url>
